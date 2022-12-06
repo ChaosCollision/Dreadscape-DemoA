@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6476494569239860575}
   - component: {fileID: 6476494569239860574}
   m_Layer: 0
-  m_Name: Hazard
+  m_Name: TP
   m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

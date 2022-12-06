@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/[Scenes]/End.unity
     guid: 2e26c410485b9d041acaed5fbcdef632
+  - enabled: 1
+    path: Assets/[Scenes]/TLCEND.unity
+    guid: cf76f4ca17e14dd49abd05ba2d735ed5
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: e3ca01cdf13ff204c81a647aa7f04c5f, type: 2}

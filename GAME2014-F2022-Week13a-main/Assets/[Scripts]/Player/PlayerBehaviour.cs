@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    [Header("Player Movement")] 
+    [Header("Player Movement")]
     public float horizontalForce;
     public float horizontalSpeed;
     public float verticalForce;
@@ -20,7 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
     public Animator animator;
     public PlayerAnimationState state;
 
-    [Header("Dust Trail")] 
+    [Header("Dust Trail")]
     public ParticleSystem dustTrail;
     public Color dustTrailColour;
 
@@ -32,12 +32,12 @@ public class PlayerBehaviour : MonoBehaviour
     public float shakeTimer;
     public bool isCameraShaking;
 
-    [Header("Health System")] 
+    [Header("Health System")]
     public HealthBarController health;
     public LifeCounterController life;
     public DeathPlaneController deathPlane;
 
-    [Header("Controls")] 
+    [Header("Controls")]
     public Joystick leftJoystick;
     [Range(0.1f, 1.0f)]
     public float verticalThreshold;
@@ -113,16 +113,16 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Move()
     {
-        float x = Input.GetAxisRaw("Horizontal") + 
+        float x = Input.GetAxisRaw("Horizontal") +
                   (GameObject.Find("OnScreenControls") ? leftJoystick.Horizontal : 0.0f);
 
         if (x != 0.0f)
         {
             Flip(x);
-        
+
             rigidbody2D.AddForce(Vector2.right * ((x > 0.0) ? 1.0f : -1.0f) * horizontalForce * ((isGrounded) ? 1 : airFactor));
 
-            var clampedX  = Mathf.Clamp(rigidbody2D.velocity.x, -horizontalSpeed, horizontalSpeed);
+            var clampedX = Mathf.Clamp(rigidbody2D.velocity.x, -horizontalSpeed, horizontalSpeed);
 
             rigidbody2D.velocity = new Vector2(clampedX, rigidbody2D.velocity.y);
 
@@ -132,7 +132,7 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 CreateDustTrail();
             }
-            
+
         }
 
         if ((isGrounded) && (x == 0))
@@ -162,7 +162,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Jump()
     {
-        var y = Input.GetAxis("Jump") + 
+        var y = Input.GetAxis("Jump") +
                 (GameObject.Find("OnScreenControls") ? leftJoystick.Vertical : 0.0f);
 
         if ((isGrounded) && (y > verticalThreshold))
@@ -218,6 +218,12 @@ public class PlayerBehaviour : MonoBehaviour
             }
             ShakeCamera();
         }
+       
     }
-
+   
 }
+
+
+
+
+
