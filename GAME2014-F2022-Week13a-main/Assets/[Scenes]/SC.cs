@@ -4,10 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SC : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene(2);
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(2);
+        }
+        }
+        
     }
-}
+
 
 
